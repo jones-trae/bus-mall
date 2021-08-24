@@ -10,6 +10,7 @@ const productsSectionElem = document.getElementById('products');
 let leftProduct = null;
 let rightProduct = null;
 let CenterProduct = null;
+let Rounds = 25;
 
 //------Constructor Functions------//
 
@@ -48,13 +49,50 @@ function chooseThreeProducts () {
   }
 }
 
+
+
 leftProduct.renderSingleProduct(leftImageElem);
 centerProduct.renderSingleProduct(centerImageElem);
 rightProduct.renderSingleProduct(rightImageElem);
 
 
+
 //Listeners----//
+productsSectionElem.addEventListener('click', handleClick);
 
+function handleClick(event) {
+  console.log(event.target);
+  constValidTargets = [leftImageElem, rightImageElem, centerImageElem];
+  if (ValidTargets.includes(event.target)) {
+    rounds--;
+    if (event.target === validTargets[0]) {
+      validTargets[0].timeClicked++
+    } else if (event.target === validTargets[1]) {
+      validTargets[1].timesClicked++;
+    } else {
+      validTargets[2].timesClicked++;
+    }
+  }
+}
 
-//
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('Banana Slicer', './img/bag.jpg');
+makeAProduct('TP Media Stand', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+
 
