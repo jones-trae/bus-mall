@@ -47,13 +47,23 @@ function chooseThreeProducts () {
     const centerIndex = Math.floor(Math.random() * Product.allProducts.length);
     centerProduct = Product.allProducts[rightIndex];
   }
+  leftProduct.renderSingleProduct(leftImageElem);
+centerProduct.renderSingleProduct(centerImageElem);
+rightProduct.renderSingleProduct(rightImageElem);
+}
+
+function renderResults() {
+  const resultsElem = document.getElementById('results');
+  resultsElem.innerHTML = '';
+  for (let product of Product.allProducts) {
+    const liElem = document.createElement('li');
+    liElem.textContent = `${product.name} was shown ${product.timesShown} times and was clicked ${product.timesClicked} times.`;
+    resultsElem.appendChild(liElem);
+  }
 }
 
 
 
-leftProduct.renderSingleProduct(leftImageElem);
-centerProduct.renderSingleProduct(centerImageElem);
-rightProduct.renderSingleProduct(rightImageElem);
 
 
 
@@ -72,27 +82,33 @@ function handleClick(event) {
     } else {
       validTargets[2].timesClicked++;
     }
+    if (rounds === 0) {
+    productsSectionElem.removeEventListener('click', handleClick);
+    alert('we are outta votes');
+    } else {
+      chooseThreeProducts();
+    }
   }
 }
 
 makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('Banana Slicer', './img/bag.jpg');
-makeAProduct('TP Media Stand', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
-makeAProduct('R2-D2 Suitcase', './img/bag.jpg');
+makeAProduct('Banana Slicer', './img/banana.jpg');
+makeAProduct('TP Media Stand', './img/bathroom.jpg');
+makeAProduct('Open Toe Boots', './img/boots.jpg');
+makeAProduct('Breakfast Oven', './img/breakfast.jpg');
+makeAProduct('Bubble gum Chair', './img/chair.jpg');
+makeAProduct('Cthulhu Statue', './img/cthulhu.jpg');
+makeAProduct('Dog Duck Bill', './img/dog-duck.jpg');
+makeAProduct('Dragon Meat', './img/dragon.jpg');
+makeAProduct('Pen-Utinsil', './img/pen.jpg');
+makeAProduct('Pet Sweep', './img/pet-sweep.jpg');
+makeAProduct('Pizza Scissors', './img/scissors.jpg');
+makeAProduct('Shark Bag', './img/shark.jpg');
+makeAProduct('Baby-Broomer', './img/sweep.jpg');
+makeAProduct('Tauntaun Bag', './img/tauntaun.jpg');
+makeAProduct('Unicorn Meat', './img/unicorn.jpg');
+makeAProduct('Water Can', './img/water-can.jpg');
+makeAProduct('Wine Glass', './img/wine-glass.jpg');
+
 
 
